@@ -1,0 +1,91 @@
+{
+  "expo": {
+    "name": "EVENTLOG",
+    "scheme": "eventlog",
+    "slug": "eventlog",
+    "icon": "./assets/images/icon.png",
+    "version": "1.2.1",
+    "plugins": [
+      "expo-router",
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./assets/fonts/SquadaOne.ttf",
+            "./assets/fonts/Arial.ttf",
+            "./assets/fonts/ArialBold.ttf",
+            "./assets/fonts/ArialItalic.ttf"
+          ]
+        }
+      ],
+       [
+       "expo-splash-screen",
+        {
+          "image": "./assets/images/splash-icon.png",
+          "dark": {
+            "image": "./assets/images/splash-icon-dark.png"
+          },
+          "imageWidth": 200
+        }
+      ],
+      [
+        "expo-sqlite",
+        {
+          "enableFTS": true,
+          "useSQLCipher": true,
+          "android": {
+            "enableFTS": false,
+            "useSQLCipher": false
+          },
+          "ios": {
+            "customBuildFlags": [
+              "-DSQLITE_ENABLE_DBSTAT_VTAB=1",
+              "-DSQLITE_ENABLE_SNAPSHOT=1"
+            ]
+          }
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera",
+          "microphonePermission": "Allow $(PRODUCT_NAME) to access your microphone",
+          "recordAudioAndroid": true
+        }
+      ],
+      [
+        "expo-document-picker",
+        {
+          "iCloudContainerEnvironment": "Production"
+        }
+      ],
+      "expo-asset"
+    ],
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "53a32d78-9ca7-4ea5-9a69-308a59bbceaa"
+      }
+    },
+    "owner": "chocopndn",
+    "android": {
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
+      ],
+      "package": "com.chocopndn.eventlog"
+    },
+    "runtimeVersion": "1.0.0",
+    "updates": {
+      "url": "https://u.expo.dev/53a32d78-9ca7-4ea5-9a69-308a59bbceaa"
+    },
+    "ios": {
+      "bundleIdentifier": "com.chocopndn.eventlog",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    }
+  }
+}
