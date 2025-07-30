@@ -4,7 +4,7 @@ import theme from "../../../constants/theme";
 const UserManagementLayout = () => {
   return (
     <Stack>
-      <Stack.Screen name="index" options={{ headerShown: false }} />
+      <Stack.Screen name="index" options={{ headerShown: false, title: ""}} />
       <Stack.Screen
         name="admins/index"
         options={{
