@@ -24,9 +24,9 @@ export default function RolesScreen() {
   }, []);
 
   return (
-    <View style={globalStyles.secondaryContainer}>
+    <View style={[globalStyles.secondaryContainer, { paddingTop: 0, paddingBottom: 100}]}>
       <Text style={styles.headerText}>ROLES</Text>
-      <ScrollView style={{ flex: 1, width: "100%" }}>
+      <View style={{width: "100%" }}>
         {roles.length > 0 ? (
           roles.map((role) => (
             <View key={role.role_id} style={styles.roleContainer}>
@@ -36,7 +36,7 @@ export default function RolesScreen() {
         ) : (
           <Text style={styles.noResults}>No roles found</Text>
         )}
-      </ScrollView>
+      </View>
 
       <TabsComponent />
       <StatusBar style="auto" />
