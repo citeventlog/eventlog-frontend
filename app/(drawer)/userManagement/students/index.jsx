@@ -160,47 +160,50 @@ export default function StudentsScreen() {
           <Text style={styles.noResults}>No students found</Text>
         )}
       </ScrollView>
-      <View style={styles.pageNav}>
-        <TouchableOpacity
-          onPress={() => handlePageChange(currentPage - 1)}
-          disabled={currentPage === 1}
-          style={{ opacity: currentPage === 1 ? 0.5 : 1 }}
-        >
-          <Image
-            source={images.arrowLeft}
-            style={[
-              styles.pageIconNav,
-              {
-                tintColor:
-                  currentPage === 1
-                    ? theme.colors.secondary
-                    : theme.colors.primary,
-              },
-            ]}
-          />
-        </TouchableOpacity>
-        <View style={styles.textPage}>
-          <Text style={styles.page}>{currentPage.toString()}</Text>
-        </View>
-        <TouchableOpacity
-          onPress={() => handlePageChange(currentPage + 1)}
-          disabled={currentPage === totalPages}
-          style={{ opacity: currentPage === totalPages ? 0.5 : 1 }}
-        >
-          <Image
-            source={images.arrowRight}
-            style={[
-              styles.pageIconNav,
-              {
-                tintColor:
-                  currentPage === totalPages
-                    ? theme.colors.secondary
-                    : theme.colors.primary,
-              },
-            ]}
-          />
-        </TouchableOpacity>
-      </View>
+      {totalPages > 1 && (
+  <View style={styles.pageNav}>
+    <TouchableOpacity
+      onPress={() => handlePageChange(currentPage - 1)}
+      disabled={currentPage === 1}
+      style={{ opacity: currentPage === 1 ? 0.5 : 1 }}
+    >
+      <Image
+        source={images.arrowLeft}
+        style={[
+          styles.pageIconNav,
+          {
+            tintColor:
+              currentPage === 1
+                ? theme.colors.secondary
+                : theme.colors.primary,
+          },
+        ]}
+      />
+    </TouchableOpacity>
+    <View style={styles.textPage}>
+      <Text style={styles.page}>{currentPage.toString()}</Text>
+    </View>
+    <TouchableOpacity
+      onPress={() => handlePageChange(currentPage + 1)}
+      disabled={currentPage === totalPages}
+      style={{ opacity: currentPage === totalPages ? 0.5 : 1 }}
+    >
+      <Image
+        source={images.arrowRight}
+        style={[
+          styles.pageIconNav,
+          {
+            tintColor:
+              currentPage === totalPages
+                ? theme.colors.secondary
+                : theme.colors.primary,
+          },
+        ]}
+      />
+    </TouchableOpacity>
+  </View>
+)}
+
       <View style={styles.buttonContainer}>
         <CustomButton
           title="ADD STUDENT"
