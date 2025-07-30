@@ -173,6 +173,7 @@ const FormField = ({
             { color: theme.colors.primary },
           ]}
           placeholder={placeholder}
+          placeholderTextColor={theme.colors.placeholder}
           value={value}
           onChangeText={handleInputChange}
           secureTextEntry={type === "password" && !showPassword}
